@@ -378,3 +378,52 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# 分行业敏感词库
+INDUSTRY_KEYWORDS = {
+    "fund": [
+        "坐享其成", "躺赚", "抄底逃顶",
+        "专家推荐", "受益者证明",
+        "目标价", "强烈推荐"
+    ],
+    "securities": [
+        "目标价", "强烈推荐",
+        "内幕消息", "确定性判断"
+    ],
+    "insurance": [
+        "存钱送保障", "分红",
+        "不用健康告知"
+    ],
+    "bank": [
+        "预期年化", "存款送礼",
+        "保本理财"
+    ]
+}
+
+
+def check_industry_content(content: str, industry: str) -> dict:
+    """
+    分行业合规检查
+    
+    Args:
+        content: 营销内容文本
+        industry: 行业类型（fund/securities/insurance/bank）
+    
+    Returns:
+        审查结果字典
+    """
+    result = check_content(content)
+    
+    # 行业专属检查
+    if industry in INDUSTRY_KEYWORDS:
+        found_keywords = [word for word in INDUSTRY_KEYWORDS[industry] if word in content]
+        if found_keywords:
+            result["violations"].append({
+                "rule": f"行业专属规则（{industry}）",
+                "description": "使用行业禁止用语",
+                "details": f"发现行业禁止用语：{', '.join(found_keywords)}",
+                "severity": "高"
+            })
+            result["suggestions"].append(f"删除行业禁止用语：{', '.join(found_keywords)}")
+    
+    return result

@@ -1,6 +1,8 @@
-# 金融营销合规助手 v1.0.0
+# 金融营销合规助手 v2.0.0
 
-**定位**：基于《金融产品网络营销管理办法》及相关法规，提供金融产品营销内容合规审查和方案生成。
+**定位**：基于《金融产品网络营销管理办法》及 15+ 金融监管法规，提供金融产品营销内容合规审查和方案生成。
+
+**合并说明**：由 `content-compliance`（v1.0.0）和 `finance-marketing-compliance`（v1.0.0）合并而成，保留双方优势。
 
 ---
 
@@ -10,6 +12,7 @@
 |------|------|------|
 | 文章合规审查 | `compliance-checker.py review` | 审查营销文章合规性 |
 | 营销方案审查 | `compliance-checker.py plan` | 审查营销方案合规性 |
+| 分行业审查 | `compliance-checker.py industry` | 分行业专属审查 |
 | 合规方案生成 | `compliance-checker.py generate` | 生成合规营销方案 |
 
 ---
