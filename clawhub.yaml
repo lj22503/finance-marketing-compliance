@@ -1,0 +1,19 @@
+name: finance-marketing-compliance
+version: 2.0.0
+description: 金融营销合规助手 - 基于《金融产品网络营销管理办法》及 15+ 金融监管法规，提供金融产品营销内容合规审查和方案生成。覆盖基金/保险/理财/信托等全品类，支持文章审查/方案审查/分行业审查/合规方案生成。
+author: 燃冰 & ant
+license: MIT
+repository: https://github.com/lj22503/finance-marketing-compliance
+tags:
+  - finance
+  - compliance
+  - marketing
+  - content-review
+  - risk-management
+
+features:
+  - 基于 15+ 金融监管法规的合规审查引擎
+  - 支持文章/方案/分行业多维度审查
+  - 自动生成合规营销方案
+  - 覆盖基金/保险/理财/信托全品类
+  - 合规风险分级预警机制
